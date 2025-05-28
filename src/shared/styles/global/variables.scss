@@ -16,6 +16,10 @@
 $height-100vh: calc(100 * var(--vh, 1vh));
 $fz-default: 16px;
 
+// retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dpi;
+
 $vp-2560: 2560px;
 $vp-1920: 1920px;
 $vp-1440: 1440px;
