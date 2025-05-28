@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  className?: string
+}
+
+const { className } = Astro.props
+---
+
+<div class:list={['lang-select', className]} data-header="lang">
+  <button
+    class="lang-select__btn"
+    type="button"
+    aria-label="select language"
+    data-header="lang-toggle"
+  >
+    <Icon name="icon-lang" />
+  </button>
+
+  <div class:list={['lang-select__dropdown']} data-header="lang-dropdown">
+    <ul class="lang-select__list">
+      <li class="is-active">
+        <a href="#">English</a>
+      </li>
+      <li>
+        <a href="#">Русский</a>
+      </li>
+    </ul>
+  </div>
+</div>

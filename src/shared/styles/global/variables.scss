@@ -6,6 +6,9 @@
   --color-navy: #adc3ff;
   --color-dark-navi: #0b0b29;
   --color-header-bg: #272780;
+  --color-yellow: #f7ff85;
+  --color-green: #18cc60;
+  --color-orange: #ffaa00;
 }
 
 // Высота без учета bar в android, ios
@@ -21,4 +24,4 @@ $vp-1024: 1024px;
 $vp-768: 768px;
 $vp-375: 375px;
 
-$transition: 0.3s ease;
+$transition: 150ms ease-out;

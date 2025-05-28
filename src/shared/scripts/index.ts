@@ -1,12 +1,11 @@
 import { initScaling } from '@scripts/modules/scaling'
+import { initHeader } from '../../modules/Header/Header.ts'
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
     initScaling()
-    // initModals()
-    // let accordions = new Accordions()
-    // accordions.init()
+    initHeader()
   },
   true
 )

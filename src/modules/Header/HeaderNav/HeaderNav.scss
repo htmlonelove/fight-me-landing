@@ -1,0 +1,68 @@
+@use "@styles/func";
+@use "@styles/variables";
+@use "@styles/mixins";
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+
+  @include mixins.vp-1280 {
+    gap: func.rem(21.33);
+  }
+
+  @include mixins.vp-320 {
+    gap: func.rem(8);
+  }
+
+  &__item {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 900;
+
+    @include mixins.vp-1280 {
+      font-size: func.rem(16);
+      line-height: func.rem(19);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-navy);
+    transition: opacity variables.$transition;
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    @include mixins.vp-1280 {
+      gap: func.rem(5.33);
+
+      svg {
+        width: func.rem(32);
+        height: func.rem(32);
+      }
+    }
+
+    @include mixins.vp-320 {
+      span {
+        @include mixins.visually-hidden;
+      }
+    }
+
+    @include mixins.hover-focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.48;
+      transition: none;
+    }
+  }
+}

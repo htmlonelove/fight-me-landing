@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  className?: string
+}
+
+const { className } = Astro.props
+---
+
+<ul class:list={['header-nav', className]}>
+  <li class="header-nav__item">
+    <a href="#" class="header-nav__link">
+      <Icon name="icon-support" />
+      <span>Support</span>
+    </a>
+  </li>
+  <li class="header-nav__item">
+    <a href="#" class="header-nav__link">
+      <Icon name="icon-discord" />
+      <span>Discord</span>
+    </a>
+  </li>
+</ul>

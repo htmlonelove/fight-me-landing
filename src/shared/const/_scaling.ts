@@ -18,15 +18,15 @@ export const SCALING_BREAKPOINTS: ScalingBreakpoint[] = [
   },
   {
     size: { base: DeviceSize.Desktop.SMALL },
-    fontSize: { base: BASE_FONT_SIZE, max: 20 }
+    fontSize: { base: BASE_FONT_SIZE }
   },
   {
     size: { base: DeviceSize.Tablet.LANDSCAPE },
-    fontSize: { base: BASE_FONT_SIZE, max: 18 }
+    fontSize: { base: BASE_FONT_SIZE, max: 16 }
   },
   {
     size: { base: DeviceSize.Tablet.PORTRAIT },
-    fontSize: { base: BASE_FONT_SIZE, max: 18 }
+    fontSize: { base: BASE_FONT_SIZE, max: 16 }
   },
   {
     size: { base: DeviceSize.Mobile.SMALL },
