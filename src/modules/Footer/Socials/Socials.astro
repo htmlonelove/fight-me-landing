@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  className?: string
+}
+
+const { className } = Astro.props
+---
+
+<ul class:list={['socials', className]}>
+  <li class="socials__item">
+    <a href="#" aria-label="telegram">
+      <Icon name="icon-telegram" />
+    </a>
+  </li>
+  <li class="socials__item">
+    <a href="#" aria-label="medium">
+      <Icon name="icon-medium" />
+    </a>
+  </li>
+  <li class="socials__item">
+    <a href="#" aria-label="tiktok">
+      <Icon name="icon-tiktok" />
+    </a>
+  </li>
+  <li class="socials__item">
+    <a href="#" aria-label="discord">
+      <Icon name="icon-discord" />
+    </a>
+  </li>
+  <li class="socials__item">
+    <a href="#" aria-label="x">
+      <Icon name="icon-x" />
+    </a>
+  </li>
+  <li class="socials__item">
+    <a href="#" aria-label="instagram">
+      <Icon name="icon-instagram" />
+    </a>
+  </li>
+  <li class="socials__item">
+    <a href="#" aria-label="opensea">
+      <Icon name="icon-opensea" />
+    </a>
+  </li>
+</ul>

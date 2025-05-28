@@ -1,9 +1,16 @@
 ---
-import Container from '@components/Container/Container'
+import { Icon } from 'astro-icon/components'
+import FooterNav from './FooterNav/FooterNav.astro'
+import Socials from './Socials/Socials.astro'
 ---
 
 <footer class="footer">
-  <Container>
-    <p class="footer__text">Из Санкт-Петербурга<br />с любовью</p>
-  </Container>
+  <div class="footer__inner">
+    <a href="#" class="footer__logo" aria-label="nekki">
+      <Icon name="nekki-logo" />
+    </a>
+
+    <FooterNav />
+    <Socials />
+  </div>
 </footer>

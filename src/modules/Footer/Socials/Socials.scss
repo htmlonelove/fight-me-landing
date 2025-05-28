@@ -1,0 +1,75 @@
+
+@use "@styles/func";
+@use "@styles/variables";
+@use "@styles/mixins";
+
+.socials {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 8px;
+  max-width: 296px;
+  padding: 0;
+  list-style: none;
+  margin: 0 0 0 auto;
+
+  @include mixins.vp-1280 {
+    max-width: func.rem(197.33);
+    column-gap: func.rem(8);
+    row-gap: func.rem(5);
+  }
+
+  @include mixins.vp-320 {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  &__item {
+    display: flex;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      color: var(--color-black);
+      background-color: var(--color-orange);
+      transition: opacity variables.$transition;
+
+      @include mixins.vp-1280 {
+        width: func.rem(21.33);
+        border-radius: func.rem(5.33);
+      }
+
+      @include mixins.vp-320 {
+        width: func.rem(24);
+      }
+
+      @include mixins.hover-focus {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.48;
+        transition: none;
+      }
+
+      svg {
+        width: 25px;
+        height: auto;
+
+        @include mixins.vp-1280 {
+          width: func.rem(17);
+        }
+
+        @include mixins.vp-320 {
+          width: func.rem(19);
+        }
+      }
+    }
+  }
+}

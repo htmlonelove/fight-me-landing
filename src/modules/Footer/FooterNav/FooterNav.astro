@@ -1,0 +1,24 @@
+---
+interface Props {
+  className?: string
+}
+
+const { className } = Astro.props
+---
+
+<div class:list={['footer-nav', className]}>
+  <ul class="footer-nav__list">
+    <li class="footer-nav__item">
+      <a href="#">Terms of use</a>
+    </li>
+    <li class="footer-nav__item">
+      <a href="#">Privacy policy</a>
+    </li>
+    <li class="footer-nav__item">
+      <a href="#">Whitepaper</a>
+    </li>
+  </ul>
+  <p class="footer-nav__copyright">
+    Copyrights &copy;&nbsp;2025&nbsp;Nekki. All rights reserved.
+  </p>
+</div>
