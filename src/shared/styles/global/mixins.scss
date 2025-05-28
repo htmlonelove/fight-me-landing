@@ -1,0 +1,88 @@
+@use "./variables";
+
+// Desktop-first
+
+@mixin vp-1920 {
+  @media (max-width: (variables.$vp-2560 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-1280 {
+  @media (max-width: (variables.$vp-1920 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-1024 {
+  @media (max-width: (variables.$vp-1280 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-768 {
+  @media (max-width: (variables.$vp-1024 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-320 {
+  @media (max-width: (variables.$vp-768 - 1px)) {
+    @content;
+  }
+}
+
+// ------
+
+@mixin hover-focus {
+  &:focus-visible {
+    @content;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin active {
+  &:active {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &:disabled,
+  &[inert],
+  &.is-disabled {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(100%);
+}

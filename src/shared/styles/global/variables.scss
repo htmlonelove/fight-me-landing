@@ -1,0 +1,24 @@
+:root {
+  // colors
+  // Если нет палитры от дизайнера, то для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-navy: #adc3ff;
+  --color-dark-navi: #0b0b29;
+  --color-header-bg: #272780;
+}
+
+// Высота без учета bar в android, ios
+// Для устранения бага в андроид @see https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+$height-100vh: calc(100 * var(--vh, 1vh));
+$fz-default: 16px;
+
+$vp-2560: 2560px;
+$vp-1920: 1920px;
+$vp-1440: 1440px;
+$vp-1280: 1280px;
+$vp-1024: 1024px;
+$vp-768: 768px;
+$vp-375: 375px;
+
+$transition: 0.3s ease;

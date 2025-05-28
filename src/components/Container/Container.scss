@@ -1,0 +1,14 @@
+@use "@styles/func";
+@use "@styles/variables";
+@use "@styles/mixins";
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 var(--pd-lg);
+
+  @include mixins.vp-1920 {
+    padding: 0 var(--pd-md);
+  }
+}
