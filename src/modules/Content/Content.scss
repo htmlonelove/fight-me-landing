@@ -1,0 +1,342 @@
+
+@use "@styles/func";
+@use "@styles/variables";
+@use "@styles/mixins";
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  padding-top: 485px;
+  padding-bottom: 125px;
+
+  &::before,
+  &::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 720px;
+    left: 50%;
+    transform: translateX(-50%);
+    mix-blend-mode: hard-light;
+    filter: blur(200px);
+  }
+
+  &::before {
+    top: 261px;
+    height: 960px;
+    background: linear-gradient(180deg, #2bd8ff 0%, rgba(160, 51, 255, 0) 100%);
+  }
+
+  &::after {
+    top: 208px;
+    height: 1066px;
+    background: linear-gradient(180deg, #2bd8ff 0%, rgba(160, 51, 255, 0.72) 100%);
+  }
+
+  @include mixins.vp-1920 {
+    gap: func.rem(36);
+    padding-top: func.rem(260);
+    padding-bottom: func.rem(64);
+
+    &::before,
+    &::after {
+      width: func.rem(720);
+      filter: blur(func.rem(200));
+    }
+
+    &::before {
+      top: func.rem(136);
+      height: func.rem(720);
+    }
+
+    &::after {
+      top: func.rem(176);
+      height: func.rem(800);
+    }
+  }
+
+  @include mixins.vp-1280 {
+    gap: func.rem(23);
+    padding-top: func.rem(173.33);
+    padding-bottom: func.rem(42.67);
+
+    &::before,
+    &::after {
+      width: func.rem(480);
+      filter: blur(func.rem(133.33));
+    }
+
+    &::before {
+      top: func.rem(90.67);
+      height: func.rem(480);
+    }
+
+    &::after {
+      top: func.rem(117.33);
+      height: func.rem(533.33);
+    }
+  }
+
+  @include mixins.vp-1024 {
+    padding-top: func.rem(213.16);
+    padding-bottom: func.rem(51.07);
+
+    &::before {
+      top: func.rem(100.27);
+      height: func.rem(512);
+    }
+
+    &::after {
+      top: func.rem(128.71);
+      height: func.rem(568.89);
+    }
+  }
+
+  @include mixins.vp-768 {
+    padding-top: func.rem(352.95);
+    padding-bottom: func.rem(94.31);
+
+    &::before {
+      top: func.rem(151.47);
+      height: func.rem(682.67);
+    }
+
+    &::after {
+      top: func.rem(189.39);
+      height: func.rem(758.52);
+    }
+  }
+
+  @include mixins.vp-320 {
+    gap: func.rem(16);
+    padding-top: func.rem(148);
+    padding-bottom: func.rem(32);
+
+    &::before,
+    &::after {
+      width: func.rem(280);
+    }
+
+    &::before {
+      top: func.rem(112);
+      height: func.rem(364);
+    }
+
+    &::after {
+      top: func.rem(131);
+      height: func.rem(404);
+    }
+  }
+
+  &__logo {
+    z-index: 0;
+    position: absolute;
+    left: 50%;
+    top: 48px;
+    width: 444px;
+    height: auto;
+    transform: translateX(-50%);
+
+    @include mixins.vp-1920 {
+      top: func.rem(14);
+      width: func.rem(252);
+    }
+
+    @include mixins.vp-1280 {
+      top: func.rem(11);
+      width: func.rem(165);
+    }
+
+    @include mixins.vp-1024 {
+      top: func.rem(16);
+      width: func.rem(200);
+    }
+
+    @include mixins.vp-768 {
+      top: func.rem(48);
+      width: func.rem(300);
+    }
+
+    @include mixins.vp-320 {
+      top: func.rem(16);
+      width: func.rem(130);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &::before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("/images/logo-blur.png");
+      filter: blur(1px);
+      transform: scale(1.1);
+      opacity: 0.48;
+      mix-blend-mode: overlay;
+    }
+  }
+
+  &__text {
+    z-index: 1;
+    max-width: 600px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:
+      -4px -4px 0 #224ea2,
+      4px -4px 0 #224ea2,
+      -4px 4px 0 #224ea2,
+      4px 4px 0 #224ea2,
+      -4px 0 0 #224ea2,
+      4px 0 0 #224ea2,
+      0 -4px 0 #224ea2,
+      0 4px 0 #224ea2;
+    color: var(--color-white);
+    margin: 0;
+
+    strong {
+      color: #fff55c;
+    }
+
+    @include mixins.vp-1280 {
+      max-width: func.rem(400);
+      font-size: func.rem(26.67);
+      text-shadow:
+        func.rem(-2.67) func.rem(-2.67) 0 #224ea2,
+        func.rem(2.67) func.rem(-2.67) 0 #224ea2,
+        func.rem(-2.67) func.rem(2.67) 0 #224ea2,
+        func.rem(2.67) func.rem(2.67) 0 #224ea2,
+        func.rem(-2) 0 0 #224ea2,
+        func.rem(2) 0 0 #224ea2,
+        0 func.rem(-2) 0 #224ea2,
+        0 func.rem(2) 0 #224ea2;
+    }
+
+    @include mixins.vp-320 {
+      max-width: func.rem(280);
+      font-size: func.rem(24);
+      text-shadow:
+        func.rem(-2.6) func.rem(-2.6) 0 #224ea2,
+        func.rem(2.6) func.rem(-2.6) 0 #224ea2,
+        func.rem(-2.6) func.rem(2.6) 0 #224ea2,
+        func.rem(2.6) func.rem(2.6) 0 #224ea2,
+        func.rem(-2.6) 0 0 #224ea2,
+        func.rem(2.6) 0 0 #224ea2,
+        0 func.rem(-2.6) 0 #224ea2,
+        0 func.rem(2.6) 0 #224ea2;
+    }
+  }
+
+  &__video {
+    z-index: 0;
+    position: relative;
+    width: 100%;
+    max-width: 706px;
+    box-sizing: content-box;
+    transform: rotate(0.5deg);
+
+    @include mixins.vp-1920 {
+      max-width: func.rem(576);
+    }
+
+    @include mixins.vp-1280 {
+      max-width: func.rem(384);
+    }
+
+    @include mixins.vp-768 {
+      max-width: func.rem(513.05);
+    }
+
+    @include mixins.vp-320 {
+      max-width: func.rem(259);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+    &::before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border: 8px solid var(--color-white);
+      box-shadow: 0 0 180px 0 #336aff, 0 0 72px 0 #c2f3ff;
+
+      @include mixins.vp-1280 {
+        inset: func.rem(-5.33);
+        border-width: func.rem(5.33);
+        box-shadow: 0 0 func.rem(120) 0 #336aff, 0 0 func.rem(48) 0 #c2f3ff;
+      }
+    }
+  }
+
+  &__button {
+    z-index: 1;
+    position: relative;
+    min-width: 320px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      inset: -4px;
+      border: 4px solid rgba(#22227a, 0.48);
+      border-radius: 12px;
+      box-shadow: 0 0 88px 0 rgba(#22227a, 0.48);
+    }
+
+    &::after {
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: 0 0 16px 0 #ffffff, 0 0 8px 0 #ffffff inset;
+      backdrop-filter: blur(4px);
+      mix-blend-mode: plus-lighter;
+    }
+
+    span {
+      z-index: 1;
+    }
+
+    @include mixins.vp-1920 {
+      min-width: func.rem(320);
+    }
+
+    @include mixins.vp-1280 {
+      min-width: func.rem(213.33);
+
+      &::before {
+        inset: func.rem(-2.67);
+        border-width: func.rem(2.67);
+        box-shadow: 0 0 func.rem(58.67) 0 rgba(#22227a, 0.48);
+        border-radius: func.rem(8);
+      }
+
+      &::after {
+        box-shadow: 0 0 func.rem(10.67) 0 #ffffff, 0 0 func.rem(5.33) 0 #ffffff inset;
+        backdrop-filter: blur(func.rem(2.66));
+      }
+    }
+
+    @include mixins.vp-320 {
+      min-width: func.rem(214);
+      margin-top: func.rem(4);
+    }
+  }
+}

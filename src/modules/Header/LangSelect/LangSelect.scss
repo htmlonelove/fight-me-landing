@@ -50,30 +50,29 @@
   &__dropdown {
     position: absolute;
     left: 50%;
-    bottom: -20px;
+    bottom: -15px;
     min-width: 168px;
     padding: 19px 24px;
     background-color: var(--color-header-bg);
-    transform: translate(-50%, 90%) scale(0.8);
+    transform: translate(-50%, 100%);
     opacity: 0;
     pointer-events: none;
-    transition-property: opacity, transform;
-    transition-duration: 0.1s;
+    transition-property: opacity;
+    transition-duration: 0.15s;
     transition-timing-function: ease-out;
 
     @include mixins.vp-1280 {
-      bottom: func.rem(-14);
+      bottom: func.rem(-9);
       min-width: func.rem(120);
       padding: func.rem(12) func.rem(18);
     }
 
     @include mixins.vp-320 {
-      bottom: func.rem(-10);
+      bottom: func.rem(-7);
     }
 
     &.is-active {
       opacity: 1;
-      transform: translate(-50%, 100%) scale(1);
       pointer-events: auto;
     }
   }

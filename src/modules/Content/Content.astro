@@ -1,0 +1,36 @@
+---
+import Image from 'astro/components/Image.astro'
+import Container from '../../components/Container/Container.astro'
+import Button from '../../ui/Button/Button.astro'
+interface Props {
+  className?: string
+}
+
+const { className } = Astro.props
+---
+
+<Container className="content">
+  <div class="content__logo">
+    <Image
+      src="/images/logo.png"
+      width={444}
+      height={441}
+      alt="Fight Me Logo"
+    />
+  </div>
+  <p class="content__text">
+    <strong>Collect</strong> and <strong>evolve</strong> Heroes, <strong
+      >fight</strong
+    > battles and
+    <strong>win</strong> rewards
+  </p>
+  <div class="content__video">
+    <video src="/video/video.mp4" muted autoplay playsinline loop></video>
+  </div>
+  <Button
+    text="Play now"
+    size="lg"
+    color="orange"
+    className="content__button"
+  />
+</Container>

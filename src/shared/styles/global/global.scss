@@ -39,10 +39,18 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/images/bg-1920@1x.jpg");
+  background-image: url("/images/bg-2560@1x.jpg");
 
   @include mixins.retina {
-    background-image: url("/images/bg-1920@2x.jpg");
+    background-image: url("/images/bg-2560@2x.jpg");
+  }
+
+  @include mixins.vp-1920 {
+    background-image: url("/images/bg-1920@1x.jpg");
+
+    @include mixins.retina {
+      background-image: url("/images/bg-1920@2x.jpg");
+    }
   }
 
   @include mixins.vp-1280 {
@@ -85,8 +93,13 @@ body {
 
 main {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-width: 100%;
+  overflow: hidden;
 }
 
 a {
