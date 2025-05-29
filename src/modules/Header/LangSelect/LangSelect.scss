@@ -1,0 +1,124 @@
+@use "@styles/func";
+@use "@styles/variables";
+@use "@styles/mixins";
+
+
+.lang-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+
+  @include mixins.vp-320 {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    aspect-ratio: 1;
+    padding: 0;
+    color: var(--color-navy);
+    background-color: transparent;
+    border: none;
+    transition: opacity variables.$transition;
+    cursor: pointer;
+
+    @include mixins.vp-1280 {
+      width: func.rem(32);
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    @include mixins.hover-focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.48;
+      transition: none;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    min-width: 168px;
+    padding: 19px 24px;
+    background-color: var(--color-header-bg);
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-out;
+
+    @include mixins.vp-1280 {
+      bottom: func.rem(-9);
+      min-width: func.rem(120);
+      padding: func.rem(12) func.rem(18);
+    }
+
+    @include mixins.vp-320 {
+      bottom: func.rem(-7);
+    }
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 8px;
+    padding: 0;
+    justify-items: center;
+    list-style: none;
+    margin: 0;
+
+    li {
+      font-size: 21px;
+      line-height: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--color-navy);
+      white-space: nowrap;
+
+      @include mixins.vp-1280 {
+        font-size: func.rem(16);
+        line-height: func.rem(19);
+      }
+
+      &.is-active {
+        color: var(--color-yellow);
+        pointer-events: none;
+      }
+    }
+
+    a {
+      display: block;
+      color: currentColor;
+      transition: opacity variables.$transition;
+      -webkit-tap-highlight-color: transparent;
+
+      @include mixins.hover-focus {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.48;
+        transition: none;
+      }
+    }
+  }
+}

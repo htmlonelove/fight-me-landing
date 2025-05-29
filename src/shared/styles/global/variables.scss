@@ -6,12 +6,19 @@
   --color-navy: #adc3ff;
   --color-dark-navi: #0b0b29;
   --color-header-bg: #272780;
+  --color-yellow: #f7ff85;
+  --color-green: #18cc60;
+  --color-orange: #ffaa00;
 }
 
 // Высота без учета bar в android, ios
 // Для устранения бага в андроид @see https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 $height-100vh: calc(100 * var(--vh, 1vh));
 $fz-default: 16px;
+
+// retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dpi;
 
 $vp-2560: 2560px;
 $vp-1920: 1920px;
@@ -21,4 +28,4 @@ $vp-1024: 1024px;
 $vp-768: 768px;
 $vp-375: 375px;
 
-$transition: 0.3s ease;
+$transition: 150ms ease-out;

@@ -1,7 +1,13 @@
 ---
-
+import HeaderNav from './HeaderNav/HeaderNav.astro'
+import LangSelect from './LangSelect/LangSelect.astro'
+import Button from '../../ui/Button/Button.astro'
 ---
 
 <header class="header">
-  <div class="header__inner"></div>
+  <nav class="header__inner">
+    <HeaderNav />
+    <LangSelect />
+    <Button text="SIGN IN" className="header__button" />
+  </nav>
 </header>

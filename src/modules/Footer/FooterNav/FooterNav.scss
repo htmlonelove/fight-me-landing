@@ -1,0 +1,82 @@
+
+@use "@styles/func";
+@use "@styles/variables";
+@use "@styles/mixins";
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-navy);
+  margin-top: 4px;
+
+  @include mixins.vp-1280 {
+    gap: func.rem(5);
+    margin-top: func.rem(2.54);
+  }
+
+  @include mixins.vp-320 {
+    order: 1;
+    align-items: center;
+    gap: func.rem(4);
+    margin-top: 0;
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 8px;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+
+    @include mixins.vp-1280 {
+      column-gap: func.rem(16);
+      row-gap: func.rem(5);
+    }
+
+    @include mixins.vp-320 {
+      row-gap: func.rem(4);
+    }
+  }
+
+  &__item {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include mixins.vp-1280 {
+      font-size: func.rem(12);
+      line-height: func.rem(15);
+    }
+
+    a {
+      color: currentColor;
+      white-space: nowrap;
+      transition: opacity variables.$transition;
+
+      @include mixins.hover-focus {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.48;
+        transition: none;
+      }
+    }
+  }
+
+  &__copyright {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    opacity: 0.48;
+    margin: 0;
+
+    @include mixins.vp-1280 {
+      font-size: func.rem(10);
+      line-height: func.rem(12);
+    }
+  }
+}

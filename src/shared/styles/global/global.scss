@@ -1,4 +1,5 @@
 @use "./variables";
+@use "./mixins";
 
 *,
 *::before,
@@ -10,7 +11,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-height: variables.$height-100vh;
+  min-height: 100svh;
 }
 
 html {
@@ -33,9 +34,56 @@ html {
 body {
   width: 100%;
   height: 100%;
-
   display: flex;
   flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/images/bg-2560@1x.jpg");
+
+  @include mixins.retina {
+    background-image: url("/images/bg-2560@2x.jpg");
+  }
+
+  @include mixins.vp-1920 {
+    background-image: url("/images/bg-1920@1x.jpg");
+
+    @include mixins.retina {
+      background-image: url("/images/bg-1920@2x.jpg");
+    }
+  }
+
+  @include mixins.vp-1280 {
+    background-image: url("/images/bg-1280@1x.jpg");
+
+    @include mixins.retina {
+      background-image: url("/images/bg-1280@2x.jpg");
+    }
+  }
+
+  @include mixins.vp-1024 {
+    background-image: url("/images/bg-1024@1x.jpg");
+
+    @include mixins.retina {
+      background-image: url("/images/bg-1024@2x.jpg");
+    }
+  }
+
+  @include mixins.vp-768 {
+    background-image: url("/images/bg-768@1x.jpg");
+
+    @include mixins.retina {
+      background-image: url("/images/bg-768@2x.jpg");
+    }
+  }
+
+  @include mixins.vp-320 {
+    background-image: url("/images/bg-320@1x.jpg");
+
+    @include mixins.retina {
+      background-image: url("/images/bg-320@2x.jpg");
+    }
+  }
 
   &.is-loading {
     opacity: 0;
@@ -45,8 +93,13 @@ body {
 
 main {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-width: 100%;
+  overflow: hidden;
 }
 
 a {

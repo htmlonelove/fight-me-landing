@@ -32,6 +32,12 @@
   }
 }
 
+@mixin retina {
+  @media (min-resolution: variables.$retina-dpi), (min-resolution: variables.$retina-dppx) {
+    @content;
+  }
+}
+
 // ------
 
 @mixin hover-focus {

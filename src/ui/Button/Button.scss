@@ -5,24 +5,63 @@
 .button {
   display: inline-flex;
   align-items: center;
-
-  padding: 12px 18px;
-  width: fit-content;
-  gap: 7px;
-
-  border: 2px solid var(--color-fedora);
-  border-radius: 12px;
-  background-color: var(--color-lavender);
+  justify-content: center;
+  font-family: inherit;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  font-weight: 900;
+  color: var(--color-white);
   cursor: pointer;
-  transition: background-color variables.$transition;
+  transition: opacity variables.$transition;
 
-  @include mixins.hover {
-    background-color: var(--color-white);
+  @include mixins.vp-1280 {
+    border-radius: func.rem(5.33);
   }
 
-  &__text {
-    font-size: 18px;
-    color: var(--color-fedora);
-    font-family: var(--ff-Rubik);
+  @include mixins.hover-focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.48;
+    transition: none;
+  }
+
+  &--md {
+    height: 48px;
+    padding: 9px 18px;
+    font-size: 24px;
+    line-height: 29px;
+
+    @include mixins.vp-1280 {
+      height: func.rem(32);
+      padding: func.rem(6) func.rem(12);
+      font-size: func.rem(16);
+      line-height: func.rem(19);
+    }
+  }
+
+  &--lg {
+    height: 80px;
+    padding: 20px 32px;
+    font-size: 32px;
+    line-height: 39px;
+
+    @include mixins.vp-1280 {
+      height: func.rem(53.33);
+      padding: func.rem(13) func.rem(26);
+      font-size: func.rem(21.33);
+      line-height: func.rem(26);
+    }
+  }
+
+  &--green {
+    background-color: var(--color-green);
+  }
+
+  &--orange {
+    background-color: var(--color-orange);
   }
 }
