@@ -2,6 +2,7 @@
 @use "@styles/func";
 @use "@styles/variables";
 @use "@styles/mixins";
+@use "@styles/animations";
 
 .content {
   position: relative;
@@ -264,6 +265,7 @@
     }
 
     video {
+      z-index: 1;
       width: 100%;
       height: auto;
     }
@@ -284,9 +286,7 @@
     }
   }
 
-  &__button {
-    z-index: 1;
-    position: relative;
+  .content__button {
     min-width: 320px;
 
     &::before,
@@ -307,11 +307,7 @@
       border-radius: inherit;
       box-shadow: 0 0 16px 0 #ffffff, 0 0 8px 0 #ffffff inset;
       backdrop-filter: blur(4px);
-      mix-blend-mode: plus-lighter;
-    }
-
-    span {
-      z-index: 1;
+      animation: pulse 1.6s infinite;
     }
 
     @include mixins.vp-1920 {

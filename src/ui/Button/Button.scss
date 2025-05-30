@@ -3,6 +3,8 @@
 @use "@styles/mixins";
 
 .button {
+  z-index: 1;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -14,18 +16,32 @@
   font-weight: 900;
   color: var(--color-white);
   cursor: pointer;
-  transition: opacity variables.$transition;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(#0b0b29, 0);
+    border-radius: inherit;
+    transition: background-color variables.$transition;
+  }
+
+  span {
+    z-index: 1;
+  }
 
   @include mixins.vp-1280 {
     border-radius: func.rem(5.33);
   }
 
   @include mixins.hover-focus {
-    opacity: 0.8;
+    &::before {
+      background-color: rgba(#0b0b29, 0.16);
+    }
   }
 
-  &:active {
-    opacity: 0.48;
+  &:active::before {
+    background-color: rgba(#ffffff, 0.24);
     transition: none;
   }
 
