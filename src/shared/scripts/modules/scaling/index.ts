@@ -3,6 +3,7 @@ import { SCALING_BREAKPOINTS } from '@shared/const'
 
 const getScaleFontSize = (
   windowWidth: number,
+  windowHeight: number,
   breakpoints: ScalingBreakpoint[]
 ) => {
   const currentBreakpoint =
@@ -15,9 +16,11 @@ const getScaleFontSize = (
   const minFontSize = currentBreakpoint.fontSize?.min
   const maxFontSize = currentBreakpoint.fontSize?.max
 
-  let size =
-    (windowWidth / currentBreakpoint.size.base) *
-    currentBreakpoint.fontSize.base
+  const widthScale = windowWidth / currentBreakpoint.size.base
+  const heightScale = windowHeight / currentBreakpoint.size.heightBase
+  const scale = (widthScale + heightScale) / 2
+
+  let size = scale * currentBreakpoint.fontSize.base
 
   if (minFontSize) {
     size = size > minFontSize ? size : minFontSize
@@ -40,7 +43,7 @@ const handleWindowResize = (evt, isInitialCall?: boolean) => {
   const viewportWidth = window.innerWidth
   const viewportHeight = window.innerHeight
 
-  htmlElement.style.fontSize = `${getScaleFontSize(viewportWidth, SCALING_BREAKPOINTS)}px`
+  htmlElement.style.fontSize = `${getScaleFontSize(viewportWidth, viewportHeight, SCALING_BREAKPOINTS)}px`
   htmlElement.style.setProperty('--vh', `${viewportHeight * 0.01}px`)
 
   if (isInitialCall) {
