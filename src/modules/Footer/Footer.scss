@@ -13,7 +13,7 @@
 
   @include mixins.vp-1280 {
     min-height: func.rem(80);
-    padding: func.rem(17.33) 0;
+    padding: func.rem(17) 0;
   }
 
   @include mixins.vp-320 {
@@ -65,14 +65,14 @@
     margin: 0 auto;
 
     @include mixins.vp-1280 {
-      gap: func.rem(21.33);
+      gap: func.rem(20);
       max-width: func.rem(664);
     }
 
     @include mixins.vp-320 {
       flex-direction: column;
       align-items: center;
-      gap: func.rem(20);
+      gap: func.rem(18);
     }
   }
 
@@ -85,7 +85,7 @@
 
     @include mixins.vp-1280 {
       width: func.rem(85.33);
-      margin-top: func.rem(2.54);
+      margin-top: func.rem(2);
     }
 
     @include mixins.vp-320 {
