@@ -5,9 +5,9 @@
 .footer {
   z-index: 0;
   position: relative;
-  padding: 26px 0;
+  padding: func.rem(26) 0;
   width: 100%;
-  min-height: 120px;
+  min-height: func.rem(120);
   background-color: var(--color-dark-navi);
   overflow: hidden;
 
@@ -59,9 +59,9 @@
 
   &__inner {
     display: flex;
-    gap: 32px;
+    gap: func.rem(32);
     width: 100%;
-    max-width: 996px;
+    max-width: func.rem(996);
     margin: 0 auto;
 
     @include mixins.vp-1280 {
@@ -79,8 +79,8 @@
   &__logo {
     flex-shrink: 0;
     display: flex;
-    width: 128px;
-    margin-top: 4px;
+    width: func.rem(128);
+    margin-top: func.rem(4);
     transition: opacity variables.$transition;
 
     @include mixins.vp-1280 {
@@ -96,7 +96,7 @@
     svg {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 0 20.08px #8f3386);
+      filter: drop-shadow(0 0 func.rem(20.08) #8f3386);
     }
 
     @include mixins.hover-focus {

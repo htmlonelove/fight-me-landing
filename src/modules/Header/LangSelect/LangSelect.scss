@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
+    width: func.rem(48);
     aspect-ratio: 1;
     padding: 0;
     color: var(--color-navy);
@@ -50,9 +50,9 @@
   &__dropdown {
     position: absolute;
     left: 50%;
-    bottom: -15px;
-    min-width: 168px;
-    padding: 19px 24px;
+    bottom: func.rem(-15);
+    min-width: func.rem(168);
+    padding: func.rem(19) func.rem(24);
     background-color: var(--color-header-bg);
     transform: translate(-50%, 100%);
     opacity: 0;
@@ -80,15 +80,15 @@
   &__list {
     display: grid;
     grid-template-columns: 100%;
-    grid-gap: 8px;
+    grid-gap: func.rem(8);
     padding: 0;
     justify-items: center;
     list-style: none;
     margin: 0;
 
     li {
-      font-size: 21px;
-      line-height: 24px;
+      font-size: func.rem(21);
+      line-height: func.rem(24);
       font-weight: 800;
       text-transform: uppercase;
       color: var(--color-navy);

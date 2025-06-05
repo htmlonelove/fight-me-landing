@@ -1,5 +1,6 @@
 import type { ScalingBreakpoint } from '@shared/const'
 import { SCALING_BREAKPOINTS } from '@shared/const'
+import { iosChecker } from '@shared/helpers/_ios-checker'
 
 const getScaleFontSize = (
   windowWidth: number,
@@ -18,30 +19,41 @@ const getScaleFontSize = (
 
   const widthScale = windowWidth / currentBreakpoint.size.base
   const heightScale = windowHeight / currentBreakpoint.size.heightBase
-  const scale = (widthScale + heightScale) / 2
+
+  let scale = Math.min(widthScale, heightScale)
+
+  if (windowHeight < currentBreakpoint.size.heightBase) {
+    scale = scale * (windowHeight / currentBreakpoint.size.heightBase)
+  }
 
   let size = scale * currentBreakpoint.fontSize.base
 
   if (minFontSize) {
-    size = size > minFontSize ? size : minFontSize
+    size = Math.max(size, minFontSize)
   }
 
   if (maxFontSize) {
-    size = size < maxFontSize ? size : maxFontSize
+    size = Math.min(size, maxFontSize)
   }
 
   return Number(size.toFixed(2))
 }
 
 const handleWindowResize = (evt, isInitialCall?: boolean) => {
+
   if (!document || !window) {
     return
   }
 
+  const isIOS = iosChecker()
   const htmlElement = document.documentElement
 
-  const viewportWidth = window.innerWidth
-  const viewportHeight = window.innerHeight
+  const viewportWidth = isIOS
+    ? document.documentElement.clientWidth
+    : window.innerWidth
+  const viewportHeight = isIOS
+    ? document.documentElement.clientHeight
+    : window.innerHeight
 
   htmlElement.style.fontSize = `${getScaleFontSize(viewportWidth, viewportHeight, SCALING_BREAKPOINTS)}px`
   htmlElement.style.setProperty('--vh', `${viewportHeight * 0.01}px`)

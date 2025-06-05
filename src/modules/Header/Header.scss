@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 80px;
+  min-height: func.rem(80);
   background-color: var(--color-header-bg);
 
   @include mixins.vp-1280 {
@@ -59,10 +59,10 @@
   &__inner {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: func.rem(32);
     width: 100%;
-    max-width: 996px;
-    padding: 16px 0;
+    max-width: func.rem(996);
+    padding: func.rem(16) 0;
 
     @include mixins.vp-1280 {
       gap: func.rem(21.33);
@@ -77,7 +77,7 @@
   }
 
   &__button {
-    min-width: 200px;
+    min-width: func.rem(200);
 
     @include mixins.vp-1280 {
       min-width: func.rem(133.33);

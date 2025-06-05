@@ -8,9 +8,9 @@
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  column-gap: 12px;
-  row-gap: 8px;
-  max-width: 296px;
+  column-gap: func.rem(12);
+  row-gap: func.rem(8);
+  max-width: func.rem(296);
   padding: 0;
   list-style: none;
   margin: 0 0 0 auto;
@@ -34,9 +34,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 32px;
+      width: func.rem(32);
       aspect-ratio: 1;
-      border-radius: 8px;
+      border-radius: func.rem(8);
       color: var(--color-black);
       background-color: var(--color-orange);
       overflow: hidden;
@@ -72,7 +72,7 @@
 
       svg {
         z-index: 1;
-        width: 25px;
+        width: func.rem(25);
         height: auto;
 
         @include mixins.vp-1280 {
