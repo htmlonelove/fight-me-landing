@@ -11,7 +11,7 @@ export const DeviceSize = {
   Desktop: {
     SMALL: 1280,
     MEDIUM: 1440,
-    LARGE: 1919,
+    LARGE: 1920,
     XL: 2560
   }
 } as const

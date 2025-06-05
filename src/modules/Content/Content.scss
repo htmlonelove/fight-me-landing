@@ -9,31 +9,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 36px;
-  padding-top: 485px;
-  padding-bottom: 125px;
+  gap: func.rem(36);
+  padding-top: func.rem(485);
+  padding-bottom: func.rem(125);
 
   &::before,
   &::after {
     z-index: -1;
     content: "";
     position: absolute;
-    width: 720px;
+    width: func.rem(720);
     left: 50%;
     transform: translateX(-50%);
     mix-blend-mode: hard-light;
-    filter: blur(200px);
+    filter: blur(func.rem(200));
   }
 
   &::before {
-    top: 261px;
-    height: 960px;
+    top: func.rem(261);
+    height: func.rem(960);
     background: linear-gradient(180deg, #2bd8ff 0%, rgba(160, 51, 255, 0) 100%);
   }
 
   &::after {
-    top: 208px;
-    height: 1066px;
+    top: func.rem(208);
+    height: func.rem(1066);
     background: linear-gradient(180deg, #2bd8ff 0%, rgba(160, 51, 255, 0.72) 100%);
   }
 
@@ -136,8 +136,8 @@
     z-index: 0;
     position: absolute;
     left: 50%;
-    top: 48px;
-    width: 444px;
+    top: func.rem(48);
+    width: func.rem(444);
     height: auto;
     transform: translateX(-50%);
 
@@ -180,7 +180,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-image: url("/images/logo-blur.png");
-      filter: blur(1px);
+      filter: blur(func.rem(1));
       transform: scale(1.1);
       opacity: 0.48;
       mix-blend-mode: overlay;
@@ -189,21 +189,21 @@
 
   &__text {
     z-index: 1;
-    max-width: 600px;
+    max-width: func.rem(600);
     font-weight: 900;
-    font-size: 40px;
+    font-size: func.rem(40);
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
     text-shadow:
-      -4px -4px 0 #224ea2,
-      4px -4px 0 #224ea2,
-      -4px 4px 0 #224ea2,
-      4px 4px 0 #224ea2,
-      -4px 0 0 #224ea2,
-      4px 0 0 #224ea2,
-      0 -4px 0 #224ea2,
-      0 4px 0 #224ea2;
+      func.rem(-4) func.rem(-4) 0 #224ea2,
+      func.rem(4) func.rem(-4) 0 #224ea2,
+      func.rem(-4) func.rem(4) 0 #224ea2,
+      func.rem(4) func.rem(4) 0 #224ea2,
+      func.rem(-4) 0 0 #224ea2,
+      func.rem(4) 0 0 #224ea2,
+      0 func.rem(-4) 0 #224ea2,
+      0 func.rem(4) 0 #224ea2;
     color: var(--color-white);
     margin: 0;
 
@@ -244,7 +244,7 @@
     z-index: 0;
     position: relative;
     width: 100%;
-    max-width: 706px;
+    max-width: func.rem(706);
     box-sizing: content-box;
     transform: rotate(0.5deg);
 
@@ -274,9 +274,9 @@
       z-index: -1;
       content: "";
       position: absolute;
-      inset: -8px;
-      border: 8px solid var(--color-white);
-      box-shadow: 0 0 180px 0 #336aff, 0 0 72px 0 #c2f3ff;
+      inset: func.rem(-8);
+      border: func.rem(8) solid var(--color-white);
+      box-shadow: 0 0 func.rem(180) 0 #336aff, 0 0 func.rem(72) 0 #c2f3ff;
 
       @include mixins.vp-1280 {
         inset: func.rem(-5.33);
@@ -287,7 +287,8 @@
   }
 
   .content__button {
-    min-width: 320px;
+    min-width: func.rem(320);
+    width: fit-content;
 
     &::before,
     &::after {
@@ -296,17 +297,17 @@
     }
 
     &::before {
-      inset: -4px;
-      border: 4px solid rgba(#22227a, 0.48);
-      border-radius: 12px;
-      box-shadow: 0 0 88px 0 rgba(#22227a, 0.48);
+      inset: func.rem(-4);
+      border: func.rem(4) solid rgba(#22227a, 0.48);
+      border-radius: func.rem(12);
+      box-shadow: 0 0 func.rem(88) 0 rgba(#22227a, 0.48);
     }
 
     &::after {
       inset: 0;
       border-radius: inherit;
-      box-shadow: 0 0 16px 0 #ffffff, 0 0 8px 0 #ffffff inset;
-      backdrop-filter: blur(4px);
+      box-shadow: 0 0 func.rem(16) 0 #ffffff, 0 0 func.rem(8) 0 #ffffff inset;
+      backdrop-filter: blur(func.rem(4));
       animation: pulse 1.6s infinite;
     }
 

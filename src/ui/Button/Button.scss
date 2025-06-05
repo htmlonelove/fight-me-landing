@@ -12,7 +12,7 @@
   text-align: center;
   text-transform: uppercase;
   border: none;
-  border-radius: 8px;
+  border-radius: func.rem(8);
   font-weight: 900;
   color: var(--color-white);
   cursor: pointer;
@@ -46,10 +46,10 @@
   }
 
   &--md {
-    height: 48px;
-    padding: 9px 18px;
-    font-size: 24px;
-    line-height: 29px;
+    height: func.rem(48);
+    padding: func.rem(9) func.rem(18);
+    font-size: func.rem(24);
+    line-height: func.rem(29);
 
     @include mixins.vp-1280 {
       height: func.rem(32);
@@ -60,10 +60,10 @@
   }
 
   &--lg {
-    height: 80px;
-    padding: 20px 32px;
-    font-size: 32px;
-    line-height: 39px;
+    height: func.rem(80);
+    padding: func.rem(20) func.rem(32);
+    font-size: func.rem(32);
+    line-height: func.rem(39);
 
     @include mixins.vp-1280 {
       height: func.rem(53.33);

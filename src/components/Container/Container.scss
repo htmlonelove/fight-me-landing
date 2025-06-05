@@ -4,8 +4,8 @@
 
 .container {
   width: 100%;
-  max-width: 760px;
-  padding: 0 20px;
+  max-width: func.rem(760);
+  padding: 0 func.rem(20);
   margin: 0 auto;
 
   @include mixins.vp-1280 {

@@ -5,7 +5,7 @@
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: func.rem(32);
   padding: 0;
   list-style: none;
   margin: 0;
@@ -19,8 +19,8 @@
   }
 
   &__item {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: func.rem(24);
+    line-height: func.rem(29);
     font-weight: 900;
 
     @include mixins.vp-1280 {
@@ -32,13 +32,13 @@
   &__link {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: func.rem(8);
     color: var(--color-navy);
     transition: opacity variables.$transition;
 
     svg {
-      width: 48px;
-      height: 48px;
+      width: func.rem(48);
+      height: func.rem(48);
     }
 
     @include mixins.vp-1280 {
