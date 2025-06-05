@@ -1,4 +1,3 @@
-
 @use "@styles/func";
 @use "@styles/variables";
 @use "@styles/mixins";
@@ -8,15 +7,18 @@
   flex-direction: column;
   gap: func.rem(8);
   color: var(--color-navy);
+  margin-top: func.rem(4);
 
   @include mixins.vp-1280 {
     gap: func.rem(5);
+    margin-top: func.rem(2);
   }
 
   @include mixins.vp-320 {
     order: 1;
     align-items: center;
     gap: func.rem(4);
+    argin-top: 0;
   }
 
   &__list {
