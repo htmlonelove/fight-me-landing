@@ -40,7 +40,6 @@ const getScaleFontSize = (
 }
 
 const handleWindowResize = (evt, isInitialCall?: boolean) => {
-
   if (!document || !window) {
     return
   }
