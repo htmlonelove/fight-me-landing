@@ -39,7 +39,6 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
   background-image: url("/images/bg-2560@1x.jpg");
 
   @include mixins.retina {
