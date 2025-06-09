@@ -10,7 +10,7 @@ export const BASE_FONT_SIZE = 16
 export const SCALING_BREAKPOINTS: ScalingBreakpoint[] = [
   {
     size: { base: DeviceSize.Desktop.XL, heightBase: 1440 },
-    fontSize: { base: BASE_FONT_SIZE, max: 18 }
+    fontSize: { base: BASE_FONT_SIZE }
   },
   {
     size: { base: DeviceSize.Desktop.LARGE, heightBase: 1080 },
