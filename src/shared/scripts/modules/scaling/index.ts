@@ -20,11 +20,7 @@ const getScaleFontSize = (
   const widthScale = windowWidth / currentBreakpoint.size.base
   const heightScale = windowHeight / currentBreakpoint.size.heightBase
 
-  let scale = Math.min(widthScale, heightScale)
-
-  if (windowHeight < currentBreakpoint.size.heightBase) {
-    scale = scale * (windowHeight / currentBreakpoint.size.heightBase)
-  }
+  const scale = Math.min(widthScale, heightScale)
 
   let size = scale * currentBreakpoint.fontSize.base
 
