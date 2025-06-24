@@ -1,0 +1,126 @@
+@use "@styles/func";
+@use "@styles/variables";
+@use "@styles/mixins";
+
+.background-parallax {
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-image:
+    url("/images/clown-2560@1x.png"),
+    url("/images/wolf-2560@1x.png"),
+    url("/images/fighters-group-2560@1x.png"),
+    url("/images/bear-2560@1x.png"),
+    url("/images/rocket-2560@1x.png"),
+    url("/images/explosion-2560@1x.png"),
+    url("/images/background-2560@1x.png");
+  background-size: func.rem(913), func.rem(722), func.rem(1310), func.rem(768), func.rem(438), 100%, cover;
+  background-position: 100% 100%, 6.5% 100%, 50% 21%, 34% 50%, 100% 6.6%, 50% bottom, 50% 50%;
+  background-repeat: no-repeat;
+
+  @include mixins.retina {
+    background-image:
+      url("/images/clown-2560@2x.png"),
+      url("/images/wolf-2560@2x.png"),
+      url("/images/fighters-group-2560@2x.png"),
+      url("/images/bear-2560@2x.png"),
+      url("/images/rocket-2560@2x.png"),
+      url("/images/explosion-2560@2x.png"),
+      url("/images/background-2560@2x.png");
+  }
+
+  @include mixins.vp-1920 {
+    background-image:
+      url("/images/clown-1920@1x.png"),
+      url("/images/wolf-1920@1x.png"),
+      url("/images/fighters-group-1920@1x.png"),
+      url("/images/bear-1920@1x.png"),
+      url("/images/rocket-1920@1x.png"),
+      url("/images/explosion-1920@1x.png"),
+      url("/images/background-1920@1x.png");
+    background-size: func.rem(671), func.rem(568), func.rem(1028), func.rem(603), func.rem(298), 100%, cover;
+    background-position: 100% 100%, 3.5% 100%, 50% 19%, 33% 47%, 100% 6.4%, 50% bottom, 50% 50%;
+
+    @include mixins.retina {
+      background-image:
+        url("/images/clown-1920@2x.png"),
+        url("/images/wolf-1920@2x.png"),
+        url("/images/fighters-group-1920@2x.png"),
+        url("/images/bear-1920@2x.png"),
+        url("/images/rocket-1920@2x.png"),
+        url("/images/explosion-1920@2x.png"),
+        url("/images/background-1920@2x.png");
+    }
+  }
+
+  @include mixins.vp-1280 {
+    background-image:
+      url("/images/clown-1280@1x.png"),
+      url("/images/wolf-1280@1x.png"),
+      url("/images/fighters-group-1280@1x.png"),
+      url("/images/bear-1280@1x.png"),
+      url("/images/rocket-1280@1x.png"),
+      url("/images/explosion-1280@1x.png"),
+      url("/images/background-1280@1x.png");
+    background-size: func.rem(448), func.rem(379), func.rem(686), func.rem(403), func.rem(199), 100%, cover;
+
+    @include mixins.retina {
+      background-image:
+        url("/images/clown-1280@2x.png"),
+        url("/images/wolf-1280@2x.png"),
+        url("/images/fighters-group-1280@2x.png"),
+        url("/images/bear-1280@2x.png"),
+        url("/images/rocket-1280@2x.png"),
+        url("/images/explosion-1280@2x.png"),
+        url("/images/background-1280@2x.png");
+    }
+  }
+
+  @include mixins.vp-1024 {
+    background-image:
+      url("/images/clown-1024@1x.png"),
+      url("/images/wolf-1024@1x.png"),
+      url("/images/fighters-group-1024@1x.png"),
+      url("/images/bear-1024@1x.png"),
+      url("/images/rocket-1024@1x.png"),
+      url("/images/explosion-1024@1x.png"),
+      url("/images/background-1024@1x.png");
+    background-size: func.rem(351), func.rem(318), func.rem(574), func.rem(337), func.rem(143), 100%, cover;
+    background-position: 100% 100%, 0.4% 100%, 50% 19.5%, 33% 47%, 100% 6.4%, 50% bottom, 50% 50%;
+
+    @include mixins.retina {
+      background-image:
+        url("/images/clown-1024@2x.png"),
+        url("/images/wolf-1024@2x.png"),
+        url("/images/fighters-group-1024@2x.png"),
+        url("/images/bear-1024@2x.png"),
+        url("/images/rocket-1024@2x.png"),
+        url("/images/explosion-1024@2x.png"),
+        url("/images/background-1024@2x.png");
+    }
+  }
+
+  @include mixins.vp-768 {
+    background-image: url("/images/bg-768@1x.jpg");
+    background-size: cover;
+    background-position: bottom;
+
+    @include mixins.retina {
+      background-image: url("/images/bg-768@2x.jpg");
+    }
+  }
+
+  @include mixins.vp-320 {
+    background-image: url("/images/bg-320@1x.jpg");
+    background-size: cover;
+
+    @include mixins.retina {
+      background-image: url("/images/bg-320@2x.jpg");
+    }
+  }
+}
