@@ -4,7 +4,7 @@ import { extractNumericValue } from './helpers/extract-numeric-value'
 export const initParallaxBackground = () => {
   const tabletMediaQuery = window.matchMedia('(min-width: 768px)')
   const parallaxContainer: HTMLDivElement = document.querySelector(
-    '[data-parallax="hover"]'
+    '[data-parallax="background"]'
   )
 
   if (!parallaxContainer) {
