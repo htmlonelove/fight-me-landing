@@ -36,6 +36,7 @@
   }
 
   @include mixins.vp-1920 {
+    --background-position: 100% 100%, 3.6% 100%, 50% 19.5%, 33% 47%, 100% 6.4%, 50% bottom, 50% center;
     background-image:
       url("/images/clown-1920@1x.png"),
       url("/images/wolf-1920@1x.png"),
@@ -45,7 +46,6 @@
       url("/images/explosion-1920@1x.png"),
       url("/images/background-1920@1x.png");
     background-size: func.rem(671), func.rem(568), func.rem(1028), func.rem(603), func.rem(298), 100%, cover;
-    --background-position: 100% 100%, 3.5% 100%, 50% 19%, 33% 47%, 100% 6.4%, 50% bottom, 50% center;
 
     @include mixins.retina {
       background-image:
@@ -60,6 +60,7 @@
   }
 
   @include mixins.vp-1280 {
+    --background-position: 100% 100%, 3.6% 100%, 50% 19.5%, 33% 47%, 100% 6%, 50% bottom, 50% center;
     background-image:
       url("/images/clown-1280@1x.png"),
       url("/images/wolf-1280@1x.png"),
@@ -83,7 +84,7 @@
   }
 
   @include mixins.vp-1024 {
-    --background-position: 100% 100%, 0.4% 100%, 50% 19.5%, 33% 47%, 100% 6.4%, 50% bottom, 50% center;
+    --background-position: 100% 100%, 0.4% 100%, 50% 19.5%, 32% 47%, 100% 6.4%, 50% bottom, 50% center;
 
     background-image:
       url("/images/clown-1024@1x.png"),
@@ -108,6 +109,7 @@
   }
 
   @include mixins.vp-768 {
+    --background-position: 100% 100%, 0% 100%, 73.5% 12.9%, 8% 37%, 100% 0%, 50% bottom, 50% center;
     background-image:
       url("/images/clown-768@1x.png"),
       url("/images/wolf-768@1x.png"),
@@ -116,7 +118,7 @@
       url("/images/rocket-768@1x.png"),
       url("/images/explosion-768@1x.png"),
       url("/images/background-768@1x.png");
-    background-size: func.rem(448), func.rem(379), func.rem(686), func.rem(403), func.rem(143), 100%, cover;
+    background-size: func.rem(242), func.rem(232), func.rem(680), func.rem(493), func.rem(155), 100%, cover;
 
     @include mixins.retina {
       background-image:
