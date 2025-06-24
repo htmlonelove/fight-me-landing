@@ -142,7 +142,6 @@ select {
 
 // ie11 X removal
 input {
-
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
@@ -180,12 +179,12 @@ input[type="time"] {
 select,
 textarea,
 input:matches([type="email"],
-  [type="number"],
-  [type="password"],
-  [type="search"],
-  [type="tel"],
-  [type="text"],
-  [type="url"]) {
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"]) {
   appearance: none;
 }
 
