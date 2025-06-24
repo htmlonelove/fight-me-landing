@@ -42,12 +42,19 @@ export const initParallaxBackground = () => {
         const { x, y } = element
         const yNumericValue = extractNumericValue(y)
         const xNumericValue = extractNumericValue(x)
+
+        const updatedXValue = parseFloat(
+          (xNumericValue + newPositionX).toFixed(2)
+        )
+
         let newBackgroundPosition
+
         if (yNumericValue) {
-          newBackgroundPosition = `${xNumericValue + newPositionX}% ${y}`
+          newBackgroundPosition = `${updatedXValue}% ${y}`
         } else {
           newBackgroundPosition = `${xNumericValue}% ${y}`
         }
+
         return newBackgroundPosition
       })
     }
@@ -56,7 +63,8 @@ export const initParallaxBackground = () => {
 
     gsap.to(parallaxContainer, {
       backgroundPosition: updatedBackgroundPosition,
-      duration: 0.3
+      duration: 0.3,
+      ease: 'power1.out"'
     })
   }
 
