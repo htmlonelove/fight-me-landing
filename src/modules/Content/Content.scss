@@ -102,7 +102,7 @@
   }
 
   @include mixins.vp-768 {
-    margin-bottom: min(func.rem(48), 4.6vh);
+    margin-bottom: min(func.rem(48), 2.6vh);
     padding-top: func.rem(37);
     padding-bottom: func.rem(32);
 
@@ -121,7 +121,7 @@
     gap: func.rem(16);
     margin-bottom: 0;
     padding-top: func.rem(16);
-    padding-bottom: func.rem(24);
+    padding-bottom: func.rem(32);
 
     &::before,
     &::after {
@@ -174,8 +174,8 @@
     }
 
     @include mixins.vp-1024 {
-      min-height: func.rem(128);
-      max-height: func.rem(201);
+      min-height: func.rem(120);
+      max-height: func.rem(163);
     }
 
     @include mixins.vp-768 {
@@ -261,20 +261,16 @@
     z-index: 0;
     position: relative;
     width: 100%;
-    max-width: func.rem(706);
+    max-width: func.rem(675);
     box-sizing: content-box;
     transform: rotate(0.5deg);
 
-    @include mixins.vp-1920 {
-      max-width: func.rem(576);
-    }
-
     @include mixins.vp-1280 {
-      max-width: func.rem(384);
+      max-width: func.rem(450);
     }
 
     @include mixins.vp-768 {
-      max-width: func.rem(513.05);
+      max-width: func.rem(450);
     }
 
     @include mixins.vp-320 {
