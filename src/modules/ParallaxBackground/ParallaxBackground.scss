@@ -109,7 +109,7 @@
   }
 
   @include mixins.vp-768 {
-    --background-position: 100% 100%, 0% 100%, 73.5% 12.9%, 8% 37%, 100% 0%, 50% bottom, 50% center;
+    --background-position: 50% 104%, 50% 104%, 73.5% 12.9%, 8% 37%, 100% 0%, 50% center, 50% center;
     background-image:
       url("/images/clown-768@1x.png"),
       url("/images/wolf-768@1x.png"),
@@ -118,7 +118,7 @@
       url("/images/rocket-768@1x.png"),
       url("/images/explosion-768@1x.png"),
       url("/images/background-768@1x.png");
-    background-size: func.rem(242), func.rem(232), func.rem(680), func.rem(493), func.rem(155), 100%, cover;
+    background-size: func.rem(1435), func.rem(1116), func.rem(680), func.rem(493), func.rem(155), cover, cover;
 
     @include mixins.retina {
       background-image:

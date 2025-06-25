@@ -11,7 +11,7 @@ export const initParallaxBackground = () => {
     return
   }
 
-  const MAX_MOVEMENT = 7 // максимальное смещение в процентах
+  const MAX_MOVEMENTS = [8, 8, 6, 3, 10, 0, 0] // максимальное смещение в процентах
   const computedStyle = window.getComputedStyle(parallaxContainer)
   const defaultBackgroundPosition = computedStyle.getPropertyValue(
     '--background-position'
@@ -32,15 +32,15 @@ export const initParallaxBackground = () => {
     const mouseXPercentage = evt.clientX / innerWidth
 
     const initialPositionX = 0
-    const adjustedPositionX = (1 - mouseXPercentage) * MAX_MOVEMENT
-    const newPositionX = initialPositionX + adjustedPositionX
 
     const positionArray = parsePositionString(defaultBackgroundPosition)
 
     const calculateNewBackgroundPosition = () => {
-      return positionArray.map((element) => {
+      return positionArray.map((element, index) => {
+        const adjustedPositionX = (1 - mouseXPercentage) * MAX_MOVEMENTS[index]
+        const newPositionX = initialPositionX + adjustedPositionX
+
         const { x, y } = element
-        const yNumericValue = extractNumericValue(y)
         const xNumericValue = extractNumericValue(x)
 
         const updatedXValue = parseFloat(
@@ -49,7 +49,7 @@ export const initParallaxBackground = () => {
 
         let newBackgroundPosition
 
-        if (yNumericValue) {
+        if (MAX_MOVEMENTS[index] > 0) {
           newBackgroundPosition = `${updatedXValue}% ${y}`
         } else {
           newBackgroundPosition = `${xNumericValue}% ${y}`
