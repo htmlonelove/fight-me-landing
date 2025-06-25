@@ -44,7 +44,7 @@
     gap: func.rem(36);
     padding-top: func.rem(16);
     padding-bottom: func.rem(32);
-    margin-bottom: min(func.rem(32), 2.9vh);
+    margin-bottom: min(func.rem(35), 3.2vh);
 
     &::before,
     &::after {
@@ -67,7 +67,7 @@
     gap: func.rem(23);
     padding-top: func.rem(11);
     padding-bottom: func.rem(42.67);
-    margin-bottom: 0;
+    margin-bottom: min(func.rem(4), 2.9vh);
 
     &::before,
     &::after {
@@ -174,16 +174,19 @@
     }
 
     @include mixins.vp-1024 {
+      transform: translateY(func.rem(-3));
       min-height: func.rem(120);
       max-height: func.rem(163);
     }
 
     @include mixins.vp-768 {
+      transform: translateY(func.rem(-10));
       margin-bottom: func.rem(-14);
       max-height: func.rem(300);
     }
 
     @include mixins.vp-320 {
+      transform: none;
       max-height: func.rem(128);
       min-height: func.rem(80);
     }
