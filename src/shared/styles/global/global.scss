@@ -38,46 +38,6 @@ body {
   display: flex;
   flex-direction: column;
 
-  // @include mixins.vp-1920 {
-  //   background-image: url("/images/bg-1920@1x.jpg");
-
-  //   @include mixins.retina {
-  //     background-image: url("/images/bg-1920@2x.jpg");
-  //   }
-  // }
-
-  // @include mixins.vp-1280 {
-  //   background-image: url("/images/bg-1280@1x.jpg");
-
-  //   @include mixins.retina {
-  //     background-image: url("/images/bg-1280@2x.jpg");
-  //   }
-  // }
-
-  // @include mixins.vp-1024 {
-  //   background-image: url("/images/bg-1024@1x.jpg");
-
-  //   @include mixins.retina {
-  //     background-image: url("/images/bg-1024@2x.jpg");
-  //   }
-  // }
-
-  // @include mixins.vp-768 {
-  //   background-image: url("/images/bg-768@1x.jpg");
-
-  //   @include mixins.retina {
-  //     background-image: url("/images/bg-768@2x.jpg");
-  //   }
-  // }
-
-  // @include mixins.vp-320 {
-  //   background-image: url("/images/bg-320@1x.jpg");
-
-  //   @include mixins.retina {
-  //     background-image: url("/images/bg-320@2x.jpg");
-  //   }
-  // }
-
   &.is-loading {
     opacity: 0;
     pointer-events: none;
