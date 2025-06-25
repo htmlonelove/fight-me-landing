@@ -1,4 +1,3 @@
-import { gsap } from 'gsap'
 import { extractNumericValue } from './helpers/extract-numeric-value'
 
 export const initParallaxBackground = () => {
@@ -61,11 +60,11 @@ export const initParallaxBackground = () => {
 
     updatedBackgroundPosition = calculateNewBackgroundPosition().join(', ')
 
-    gsap.to(parallaxContainer, {
-      backgroundPosition: updatedBackgroundPosition,
-      duration: 0.3,
-      ease: 'power1.out"'
-    })
+    parallaxContainer.style.backgroundPosition = updatedBackgroundPosition
+  }
+
+  const resetBackground = () => {
+    parallaxContainer.style.backgroundPosition = ''
   }
 
   const checkMediaQueryBreakpoint = () => {
@@ -73,10 +72,11 @@ export const initParallaxBackground = () => {
       document.addEventListener('mousemove', onMouseMoveHandler)
     } else {
       document.removeEventListener('mousemove', onMouseMoveHandler)
-      parallaxContainer.style.backgroundPosition = ''
+      resetBackground()
     }
   }
 
   checkMediaQueryBreakpoint()
   tabletMediaQuery.addEventListener('change', checkMediaQueryBreakpoint)
+  window.addEventListener('resize', resetBackground)
 }
