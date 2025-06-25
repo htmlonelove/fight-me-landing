@@ -12,7 +12,7 @@
   gap: func.rem(36);
   padding-top: func.rem(48);
   padding-bottom: func.rem(64);
-  margin-bottom: min(func.rem(52), 4.5vh);
+  margin-bottom: min(func.rem(67), 4.5vh);
   height: 100%;
   flex-grow: 1;
 
@@ -102,7 +102,7 @@
   }
 
   @include mixins.vp-768 {
-    margin-bottom: min(func.rem(48), 2.6vh);
+    margin-bottom: min(func.rem(65), 10.6vh);
     padding-top: func.rem(37);
     padding-bottom: func.rem(32);
 
@@ -141,12 +141,13 @@
 
   &__logo {
     flex-grow: 1;
+    flex-shrink: 1;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: func.rem(-38);
-    max-height: func.rem(441);
+    max-height: func.rem(404);
     min-height: func.rem(200);
     width: auto;
     height: 100%;
@@ -180,9 +181,9 @@
     }
 
     @include mixins.vp-768 {
-      transform: translateY(func.rem(-10));
+      transform: translateY(func.rem(8));
       margin-bottom: func.rem(-14);
-      max-height: func.rem(300);
+      max-height: func.rem(272);
     }
 
     @include mixins.vp-320 {
@@ -264,20 +265,28 @@
     z-index: 0;
     position: relative;
     width: 100%;
-    max-width: func.rem(675);
+    max-width: func.rem(772);
+    min-height: func.rem(380);
     box-sizing: content-box;
     transform: rotate(0.5deg);
+    background-color: #336aff;
+
+    @include mixins.vp-1920 {
+      max-width: func.rem(675);
+    }
 
     @include mixins.vp-1280 {
       max-width: func.rem(450);
+      min-height: func.rem(200);
     }
 
     @include mixins.vp-768 {
-      max-width: func.rem(450);
+      max-width: func.rem(599);
     }
 
     @include mixins.vp-320 {
       max-width: func.rem(259);
+      min-height: func.rem(100);
     }
 
     video {
