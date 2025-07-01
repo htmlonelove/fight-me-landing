@@ -10,7 +10,7 @@ export const initParallaxBackground = () => {
     return
   }
 
-  const MAX_MOVEMENTS = [8, 8, 6, 3, 10, 0, 0] // максимальное смещение в процентах
+  const MAX_MOVEMENTS = [3, 8, 8, 6, 3, 10, 0, 0] // максимальное смещение в процентах
   const computedStyle = window.getComputedStyle(parallaxContainer)
   const defaultBackgroundPosition = computedStyle.getPropertyValue(
     '--background-position'
