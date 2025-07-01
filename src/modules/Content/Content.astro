@@ -14,8 +14,7 @@ import Button from '../../ui/Button/Button.astro'
     />
   </div>
   <p class="content__text">
-    <strong>Collect</strong> and <strong>evolve</strong> Heroes, <strong>fight</strong
-    > battles and
+    <strong>Collect</strong> and <strong>evolve</strong> Heroes, <strong>fight</strong> battles and
     <strong>win</strong> rewards
   </p>
   <div class="content__video">
@@ -27,5 +26,7 @@ import Button from '../../ui/Button/Button.astro'
       muted
       playsinline></video>
   </div>
-  <Button text="Play now" size="lg" color="yellow" className="content__button" />
+  <Button text="Play now" size="lg" color="yellow" className="content__button">
+    <canvas data-lottie-button="/lottie/blink-btn.json"></canvas>
+  </Button>
 </Container>
