@@ -73,6 +73,15 @@
     }
   }
 
+  canvas {
+    position: absolute;
+    inset: 0;
+    /* stylelint-disable-next-line declaration-no-important */
+    width: 100% !important;
+    /* stylelint-disable-next-line declaration-no-important */
+    height: 100% !important;
+  }
+
   &--green {
     background-color: var(--color-green);
   }
